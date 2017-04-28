@@ -17,23 +17,17 @@ error_reporting(E_ALL);
 		$pass = $_POST['password'];
 
 
-		$select = "SELECT pwd FROM User WHERE username = $name";
-		$user_query = $db->query($select_sql);
+		$select = "SELECT pwd FROM User WHERE username = '$name' AND pwd = '$pass'";
+		$user_query = $db->query($select);
 		$users = $user_query->fetchAll(PDO::FETCH_ASSOC);
 
-		$tempPass
-
-		while($row = mysql_fetch_array($users, MYSQL_ASSOC)) {
-			$tempPass = $row["pwd"]
-
-		}
 
 		$db = null;
 
-		if($tempPass == $pass) {}
+		if($users != null) {
 			$succ = "true";
 		}
-	}
+
 
 
 	} catch (PDOException $e) {
