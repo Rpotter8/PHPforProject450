@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 		$pass2 = $_POST['password2'];
 
 		if ($pass1 == $pass2) {
-			$insert_sql = "INSERT INTO User VALUES ('$name', '$pass');";
+			$insert_sql = "INSERT INTO User VALUES ('$name', '$pass1');";
 			$user_insert = $db->query($insert_sql);
 			$db = null;
 			$succ = "true";
