@@ -43,5 +43,5 @@ error_reporting(E_ALL);
 		exit();
 	}
 
-	print succ;
+	print $succ;
 ?>
