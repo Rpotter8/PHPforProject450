@@ -22,7 +22,7 @@ error_reporting(E_ALL);
 		$users = $user_select->fetchAll(PDO::FETCH_ASSOC);
 
 
-		if ($pass1 == $pass2 || users == null) {
+		if (users == null) {
 			$insert_sql = "INSERT INTO User VALUES ('$name', '$pass2');";
 			$user_insert = $db->query($insert_sql);
 			$db = null;
