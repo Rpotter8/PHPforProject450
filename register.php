@@ -17,7 +17,7 @@ error_reporting(E_ALL);
 		$pass1 = $_POST['password1'];
 		$pass2 = $_POST['password2'];
 
-		$select_sql = "Select $name From User";
+		$select_sql = "Select username From User WHERE username = '$name'";
 		$user_select = db->query($select_sql);
 		$users = $user_select->fetchAll(PDO::FETCH_ASSOC);
 
