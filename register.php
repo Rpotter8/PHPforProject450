@@ -17,7 +17,12 @@ error_reporting(E_ALL);
 		$pass1 = $_POST['password1'];
 		$pass2 = $_POST['password2'];
 
-		if ($pass1 == $pass2) {
+		$select_sql = "Select $name From User";
+		$user_select = db->query($select_sql);
+		$users = $user_select->fetchAll(PDO::FETCH_ASSOC);
+
+
+		if ($pass1 == $pass2 || users == null) {
 			$insert_sql = "INSERT INTO User VALUES ('$name', '$pass2');";
 			$user_insert = $db->query($insert_sql);
 			$db = null;
